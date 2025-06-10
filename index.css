@@ -1,0 +1,109 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+:root {
+    --cool-background-color: rgb(255, 230, 179);
+    --background-image: "sources/bison.jpg";
+    font-size: 20px;
+}
+
+body {
+    background-color: var(--cool-background-color);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+.main-body{
+    width: 70%;
+    height: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.img-container, .form-body {
+    height: 100%;
+}
+
+.img-container {
+    background-image: url(sources/bison.jpg);
+    min-width: 40%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 75% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.img-container>p{
+    height: 35px;
+    color: rgb(230, 207, 207);
+    text-align: center;
+    margin-top: auto;
+    background-color: rgba(41, 36, 36, 0.788);
+}
+
+.img-container a{
+    color: rgb(230, 207, 207);
+    text-decoration: none;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-body > h1, .form-body  h2 {
+    font-size: 1.5rem;
+}
+
+form > ul {
+    list-style-type: none;
+}
+
+form > ul  label {
+    display: block;
+}
