@@ -18,13 +18,22 @@
 }
 
 :root {
-    --cool-background-color: rgb(255, 230, 179);
-    --background-image: "sources/bison.jpg";
+    --background-color: rgb(0, 0, 0, .9);
+    --form-background-color: rgb(242, 242, 242);
     font-size: 20px;
+    font-family: Bellefair, system-ui;
+    --input-background-color: white;
+    color: black;
+
+    --valid-color: rgb(0, 204, 153, .35);
+    --invalid-color: rgb(204, 0, 0, .35);
+
+    --normal-border-color: rgb( 118, 118, 118);
+    --submit-button-color: rgb(0, 204, 153);
 }
 
 body {
-    background-color: var(--cool-background-color);
+    background-color: var(--background-color);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     display: flex;
@@ -57,53 +66,144 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-body{
     width: 70%;
-    height: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
 }
 
-.img-container, .form-body {
+.form-body {
     height: 100%;
 }
 
+
 .img-container {
-    background-image: url(sources/bison.jpg);
+    height: 100vh;
+    background-image: url(sources/deer.jpg);
+    position: sticky;
     min-width: 40%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 75% 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
-.img-container>p{
-    height: 35px;
+.img-container > p{
     color: rgb(230, 207, 207);
-    text-align: center;
-    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(41, 36, 36, 0.788);
+}
+
+.img-credit {
+    height: 50px;
+    margin-top: auto;
 }
 
 .img-container a{
     color: rgb(230, 207, 207);
     text-decoration: none;
+    margin: 0 5px;
+}
+
+.logo {
+    height: 80px;
+}
+
+.logo > img {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
 }
 
 .form-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding-top: 150px;
+    background-color: var(--form-background-color);
+}
+
+.form-body h1, .form-body h2, .submit {
+    margin-left: 30px;
+}
+
+#newsletter-form {
+    margin-top: 50px;
 }
 
 .form-body > h1, .form-body  h2 {
     font-size: 1.5rem;
 }
 
-form > ul {
+.form-inputs {
+    width: 100%;
     list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    width: 100%;
+    gap: 40px;
+    padding: 30px;
+    background-color: var(--input-background-color);
 }
 
-form > ul  label {
+label:has(+ input) {
+    margin-bottom: -5px;
+}
+
+label + input {
+    width: 200px;
+}
+ 
+input:valid {
+    background-image: linear-gradient(to right, white, var(--valid-color));
+    border: 2px inset var(--valid-color);
+}
+
+input:invalid {
+    background-image: linear-gradient(to right, white, var(--invalid-color));
+    border: 2px inset var(--invalid-color);
+}
+
+input:focus:valid {
+    border: 2px inset var(--valid-color);
+}
+
+input:focus:invalid {
+    border: 2px inset var(--invalid-color);
+}
+
+input:placeholder-shown {
+    background-image: none;
+    border: 1px inset var(--normal-border-color);
+} 
+
+form:has(input:invalid) button {
+    background-color: var(--invalid-color);
+}
+
+.form-inputs > li {
+    margin-right: 50px;
+}
+
+.form-inputs > p {
+    width: 100%;
+}
+
+
+.form-inputs  label {
     display: block;
+}
+
+.submit {
+    background-color: var(--submit-button-color);
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 225px;
+    color: var(--form-background-color);
 }

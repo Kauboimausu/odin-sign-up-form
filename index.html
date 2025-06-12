@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Bellefair:400,700&amp;lang=en" />
     <link rel="stylesheet" href="index.css">
     <title>Mock Sign-Up Form</title>
 </head>
@@ -10,37 +11,43 @@
     <div class="main-body">
         <div class="form-body">
             <h1>This is not a real online service! Join our newsletter to get regular articles and pictures about wildlife all over the world. </h1>
-            <form action="" id="">
+            <form action="" id="newsletter-form">
                 <h2>Except you won't.</h2>
                 <ul class="form-inputs">
+                    <p>* Indicates a required field</p>
                     <li>
-                        <label for="name">First Name:</label>
-                        <input type="text" name="first-name">
+                        <label for="name">First Name*:</label>
+                        <input type="text" name="first-name" placeholder="John" required pattern="^[a-zA-Z]+$" title="Name can't have any numbers">
                     </li>
                     <li>
                         <label for="name">Last Name:</label>
-                        <input type="text" name="last-name">
+                        <input type="text" name="last-name" placeholder="Smith" pattern="^[a-zA-Z]+$" title="Name can't have any numbers">
                     </li>
                     <li>
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email">
+                        <label for="email">E-mail*</label>
+                        <input type="email" id="email" name="email" placeholder="johnsmith@gmail.com" required>
                     </li>
                     <li>
-                        <label for="phone-number">Phone Number</label>
-                        <input type="tel" id="phone" name="phone-number">
+                        <label for="phone-number">Phone Number*</label>
+                        <input type="tel" id="phone" pattern="^\d{3}[\- ]?\d{3}[\- ]?\d{4}$" name="phone-number" placeholder="123-456-7890" required title="Number needs to be 10 digits and have spaces or dashes">
                     </li>
                     <li>
-                        <label for="password">Password</label>
-                        <input type="password" name="password">
+                        <label for="password">Password*</label>
+                        <input type="password" name="password" required placeholder="Enter password">
                     </li>
                     <li>
-                        <label for="password-conf">Password Confirmation</label>
-                        <input type="password" name="password-conf">
+                        <label for="password-conf" required>Password Confirmation*</label>
+                        <input type="password" name="password-conf" required placeholder="Confirm password">
                     </li>
                 </ul>
+                <button class="submit">Sign Up</button>
             </form>
         </div>
-        <div class="img-container"><p>Picture by <a href="https://unsplash.com/@bolsen10">Bryce Olsen</a> at <a href="https://unsplash.com/photos/brown-yak-on-brown-grass-field-during-day-4Cu9-BA8QoA">Unsplash</a></p></div>
+        <div class="img-container">
+            <p class="logo"><a href="https://github.com/Kauboimausu" target="_blank">Isabella Malagon</a> <img src="sources/github-mark-white.png" alt="White GitHub Logo"></p>
+            <p class="img-credit">Photo by <a href="https://unsplash.com/@thejoltjoker" target="_blank">Johannes Andersson</a> on <a target="_blank" href="https://unsplash.com/photos/two-brown-deer-beside-trees-and-mountain-UCd78vfC8vU">Unsplash</a></p>
+        </div>
     </div>
+    
 </body>
 </html>
