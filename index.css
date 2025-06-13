@@ -21,9 +21,10 @@
     --background-color: rgb(0, 0, 0, .9);
     --form-background-color: rgb(242, 242, 242);
     font-size: 20px;
-    font-family: Bellefair, system-ui;
+    font-family: Quintessential, system-ui;
     --input-background-color: white;
     color: black;
+    --diluted-black: rgb(0,0,0, .5);
 
     --valid-color: rgb(0, 204, 153, .35);
     --invalid-color: rgb(204, 0, 0, .35);
@@ -79,6 +80,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     background-image: url(sources/deer.jpg);
     position: sticky;
+    top: 0px;
     min-width: 40%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -104,6 +106,8 @@ h1, h2, h3, h4, h5, h6 {
     color: rgb(230, 207, 207);
     text-decoration: none;
     margin: 0 5px;
+    position: sticky;
+    top: 0px;
 }
 
 .logo {
@@ -158,20 +162,20 @@ label + input {
  
 input:valid {
     background-image: linear-gradient(to right, white, var(--valid-color));
-    border: 2px inset var(--valid-color);
+    border: 1px inset var(--valid-color);
 }
 
 input:invalid {
     background-image: linear-gradient(to right, white, var(--invalid-color));
-    border: 2px inset var(--invalid-color);
+    border: 1px inset var(--invalid-color);
 }
 
 input:focus:valid {
-    border: 2px inset var(--valid-color);
+    border: 1px inset var(--valid-color);
 }
 
 input:focus:invalid {
-    border: 2px inset var(--invalid-color);
+    border: 1px inset var(--invalid-color);
 }
 
 input:placeholder-shown {
